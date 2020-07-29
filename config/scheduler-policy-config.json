@@ -1,0 +1,12 @@
+{
+    "kind":"Policy",
+    "apiVersion":"v1",
+    "extenders":[
+        { "urlPrefix": "http://172.16.1.7:8000/",
+         "filterVerb": "filter",
+        "prioritizeVerb": "prioritize",
+        "weight": 1,
+        "enableHttps": false
+        }],
+    "alwaysCheckAllPredicates":false
+}

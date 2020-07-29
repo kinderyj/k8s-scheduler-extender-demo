@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scheduler-extender-demo
+  namespace: kube-system
+  labels:
+    component: scheduler-extender-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: scheduler-extender-demo
+  template:
+    metadata:
+      labels:
+        component: scheduler-extender-demo
+    spec:
+      containers:
+      - name: scheduler-extender
+        image: ccr.ccs.tencentyun.com/kinderyj/exscheduler:v1.01
+        imagePullPolicy: IfNotPresent
+        args:
+        - scheduler-extender-demo
+        - --v=5
+        resources:
+          requests:
+            cpu: "50m"
