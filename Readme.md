@@ -1,4 +1,4 @@
-# Scheduler FrameWork demo
+# Scheduler extender demo
 
 This repo is a demo for the feature scheduler extender based on kubernetes 1.16.
 
